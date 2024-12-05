@@ -1,0 +1,126 @@
+<html><head><base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimpiaMax - Contacto</title>
+    <link rel="stylesheet" href="contacto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <a href="principal.html" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+            </svg>
+            LimpiaMax
+        </a>
+        <div class="menu">
+            <a href="catalogo.html">Productos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="foro.html">Foro</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </nav>
+</header>
+
+<div class="contact-container">
+    <div class="contact-header">
+        <h1>Contáctanos</h1>
+        <p>Estamos aquí para ayudarte. No dudes en comunicarte con nosotros.</p>
+    </div>
+
+    <div class="contact-info">
+        <div class="info-card">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <h3>Correo Electrónico</h3>
+            <p>contacto@limpiamax.com</p>
+        </div>
+        <div class="info-card">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4 7h-3v9h-2v-9H8V7h8v2z"/>
+            </svg>
+            <h3>Teléfono</h3>
+            <p>+591 70333911</p>
+        </div>
+        <div class="info-card">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <h3>Dirección</h3>
+            <p>Av. Emilio Mendizabal, Sucre</p>
+        </div>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+        <div class="col-md-6 map-container">
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d235.71382931466803!2d-65.24306100000001!3d-19.045207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93fbcf996f3a3897%3A0x355803ff53a7b76e!2sEnprendimiento!5e0!3m2!1ses-419!2sbo!4v1733404122728!5m2!1ses-419!2sbo" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> 
+        
+    </iframe>
+        </div>
+
+    </div>
+
+    <div class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+    </div>
+
+    <div class="social-links">
+        <a href="https://facebook.com/limpiamax" target="_blank">
+            <i class="bi bi-facebook"></i> Facebook
+        </a>
+        <a href="https://instagram.com/limpiamax" target="_blank">
+            <i class="bi bi-instagram"></i> Instagram
+        </a>
+        <a href="https://twitter.com/limpiamax" target="_blank">
+            <i class="bi bi-twitter"></i> Twitter
+        </a>
+    </div>
+</div>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items" class="cart-items">
+        </div>
+        <div class="cart-total">
+            Total: <span id="cart-total">0.00</span> Bs
+        </div>
+        <button class="checkout-btn" onclick="finalizarCompra()">Proceder al pago</button>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2024 LimpiaMax - Todos los derechos reservados</p>
+    <p>Dirección: Av. Emilio Mendizabal #301, Sucre</p>
+    <p>Contacto: info@limpiamax.com | Tel: (+591) 70333911</p>
+</footer>
+
+<script src="contacto.js"></script>
+</body>
+</html>

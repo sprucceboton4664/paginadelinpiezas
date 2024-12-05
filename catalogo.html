@@ -1,0 +1,413 @@
+<html><head><base href="." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos de Limpieza</title>
+<link rel="stylesheet" href="catalogo.css">    
+
+</head>
+<body>
+  <header class="header">
+      <nav class="nav">
+          <a href="principal.html" class="logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+              </svg>
+              LimpiaMax
+          </a>
+          <div class="menu">
+              <a href="catalogo.html">Productos</a>
+              <a href="ofertas.html">Ofertas</a>
+              <a href="foro.html">Foro</a>
+              <a href="contacto.html">Contacto</a>
+              <button id="carrito-btn" onclick="mostrarCarrito()" class="btn">🛒 Carrito (<span id="carrito-contador">0</span>)</button>
+          </div>
+      </nav>
+  </header>
+
+  <div class="filter-buttons">
+      <button class="btn btn-outline-primary active" data-filter="all">Todos</button>
+      <button class="btn btn-outline-primary" data-filter="limpiadores">Limpiadores</button>
+      <button class="btn btn-outline-primary" data-filter="desinfectantes">Desinfectantes</button>
+      <button class="btn btn-outline-primary" data-filter="accesorios">Accesorios</button>
+      <button class="btn btn-outline-primary" data-filter="otros">Otros</button>
+  </div>
+
+  <div class="productos">
+      <div class="producto" data-category="limpiadores">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Detergente Multiusos</h3>
+                  <img src="https://comercializadoramyc.com/wp-content/uploads/2024/01/1.webp" alt="Detergente Multiusos" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Limpiador concentrado para todo tipo de superficies</p>
+                  <p class="precio">$150</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Detergente multiusos de alta calidad ideal para todo tipo de superficies.
+                      Fórmula concentrada que elimina efectivamente la suciedad y las manchas.
+                      Aroma fresco y duradero.
+                  </p>
+                  <p class="precio">$150</p>
+                  <button onclick="agregarAlCarrito(1, 'Detergente Multiusos', 150)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="desinfectantes">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Desinfectante Premium</h3>
+                  <img src="https://www.unidixmedica.com/wp-content/uploads/2018/08/spray-surfa-safe-premium-anios-espuma.jpg" alt="Desinfectante Premium" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Elimina el 99.9% de bacterias y virus</p>
+                  <p class="precio">$180</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Desinfectante de grado hospitalario que elimina gérmenes y bacterias.
+                      Ideal para baños, cocinas y superficies de alto contacto.
+                      Aroma lavanda duradera.
+                  </p>
+                  <p class="precio">$180</p>
+                  <button onclick="agregarAlCarrito(2, 'Desinfectante Premium', 180)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="accesorios">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Escoba Profesional</h3>
+                  <img src="https://img.freepik.com/vector-premium/escoba-madera-profesional-mango-cepillo-paja-limpieza_1323048-61720.jpg" alt="Escoba Profesional" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Escoba resistente para uso intensivo</p>
+                  <p class="precio">$120</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Escoba profesional con cerdas resistentes y duraderas.
+                      Mango ergonómico para mayor comodidad.
+                      Ideal para uso comercial y doméstico.
+                  </p>
+                  <p class="precio">$120</p>
+                  <button onclick="agregarAlCarrito(3, 'Escoba Profesional', 120)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="limpiadores">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Limpia Vidrios</h3>
+                  <img src="https://fsa.bo/productos/21694-01.jpg" alt="Limpia Vidrios" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Limpiador especializado para cristales</p>
+                  <p class="precio">$90</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Limpiador de vidrios con fórmula anti-empañamiento.
+                      No deja marcas ni residuos.
+                      Incluye rociador de precisión.
+                  </p>
+                  <p class="precio">$90</p>
+                  <button onclick="agregarAlCarrito(4, 'Limpia Vidrios', 90)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="accesorios">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Trapeador Microfibra</h3>
+                  <img src="https://alcodistribuidora.com/cdn/shop/files/2-6-150G-1-2_1500x.jpg?v=1724692610" alt="Trapeador Microfibra" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Trapeador de microfibra absorbente</p>
+                  <p class="precio">$200</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Trapeador profesional con cabezal de microfibra.
+                      Alta capacidad de absorción y limpieza.
+                      Sistema de exprimido eficiente.
+                  </p>
+                  <p class="precio">$200</p>
+                  <button onclick="agregarAlCarrito(5, 'Trapeador Microfibra', 200)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="limpiadores">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Limpiador de Pisos</h3>
+                  <img src="https://amarket.com.bo/cdn/shop/files/7775000003070_1200x1200.jpg?v=1712344348" alt="Limpiador de Pisos" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Limpiador concentrado para pisos de madera</p>
+                  <p class="precio">$160</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Limpiador especial para pisos de madera.
+                      Fórmula que protege y da brillo natural.
+                      No daña el acabado de la madera.
+                  </p>
+                  <p class="precio">$160</p>
+                  <button onclick="agregarAlCarrito(6, 'Limpiador de Pisos', 160)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="desinfectantes">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Sanitizante Industrial</h3>
+                  <img src="https://www.grupobrahma.com/administrador-sistema-2020/images/6f9403_active-mas-sanitizador-cuaternario-de-rapido-secado.jpg" alt="Sanitizante Industrial" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Sanitizante de grado industrial</p>
+                  <p class="precio">$250</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Sanitizante concentrado de uso industrial.
+                      Elimina el 99.9% de gérmenes y virus.
+                      Ideal para grandes superficies.
+                  </p>
+                  <p class="precio">$250</p>
+                  <button onclick="agregarAlCarrito(7, 'Sanitizante Industrial', 250)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="accesorios">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Kit de Limpieza</h3>
+                  <img src="https://bebemundo.com.py/wp-content/uploads/2023/07/Kit-de-Limpieza-Juego-de-Simulacion.png" alt="Kit de Limpieza" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Kit completo de herramientas de limpieza</p>
+                  <p class="precio">$350</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Kit completo con escoba, trapeador y recogedor.
+                      Incluye organizador de pared.
+                      Calidad premium para uso doméstico.
+                  </p>
+                  <p class="precio">$350</p>
+                  <button onclick="agregarAlCarrito(8, 'Kit de Limpieza', 350)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="otros">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Ambientador Automático</h3>
+                  <img src="https://walmartcr.vtexassets.com/arquivos/ids/450052/Aromatizante-Y-Repuesto-Autom-tico-Glade-En-Aerosol-Para-so-Azul-175g-2-29945.jpg?v=638309937688030000" alt="Ambientador Automático" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Dispensador automático de fragancias</p>
+                  <p class="precio">$280</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Dispensador automático programable.
+                      Incluye 2 fragancias premium.
+                      Duración de hasta 60 días.
+                  </p>
+                  <p class="precio">$280</p>
+                  <button onclick="agregarAlCarrito(9, 'Ambientador Automático', 280)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="limpiadores">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Desengrasante Profesional</h3>
+                  <img src="https://ecolkimia.com/wp-content/uploads/2024/03/9-DESENGRASANTE-PQP-PROFESIONAL-KIP-PQP-DESEN00012.png" alt="Desengrasante Profesional" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Desengrasante industrial concentrado</p>
+                  <p class="precio">$220</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Fórmula concentrada de alto poder.
+                      Elimina grasa y aceites difíciles.
+                      Uso profesional e industrial.
+                  </p>
+                  <p class="precio">$220</p>
+                  <button onclick="agregarAlCarrito(10, 'Desengrasante Profesional', 220)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="limpiadores">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Limpiador de Alfombras</h3>
+                  <img src="https://puntolimpieza.cl/cdn/shop/files/200422_7a149e45-d1f2-47bd-aa05-9941b020c59e.jpg?v=1690037474&width=416" alt="Limpiador de Alfombras" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Limpiador especial para alfombras y tapetes</p>
+                  <p class="precio">$175</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Fórmula especial que remueve manchas profundas.
+                      No daña las fibras de la alfombra.
+                      Aroma fresco y duradero.
+                  </p>
+                  <p class="precio">$175</p>
+                  <button onclick="agregarAlCarrito(11, 'Limpiador de Alfombras', 175)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="desinfectantes">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Desinfectante UV</h3>
+                  <img src="https://gentechbio.com/wp-content/uploads/2023/05/1.-U1001-W-1.jpg" alt="Desinfectante UV" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Lámpara UV desinfectante portátil</p>
+                  <p class="precio">$320</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Desinfección mediante luz ultravioleta.
+                      Ideal para dispositivos electrónicos y superficies.
+                      Portátil y recargable.
+                  </p>
+                  <p class="precio">$320</p>
+                  <button onclick="agregarAlCarrito(12, 'Desinfectante UV', 320)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="accesorios">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Dispensador Automático</h3>
+                  <img src="https://exoriam.com/wp-content/uploads/2024/01/AnyConv.com__1-dispensador-de-jabon-liquido-automatico-2.webp" alt="Dispensador Automático" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Dispensador automático de jabón</p>
+                  <p class="precio">$145</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Sensor infrarrojo de movimiento.
+                      Capacidad de 300ml.
+                      Funcionamiento silencioso.
+                  </p>
+                  <p class="precio">$145</p>
+                  <button onclick="agregarAlCarrito(13, 'Dispensador Automático', 145)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="otros">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Sistema de Filtración</h3>
+                  <img src="https://m.media-amazon.com/images/I/718Yi2xAVgS.jpg" alt="Sistema de Filtración" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Sistema de filtración de agua</p>
+                  <p class="precio">$450</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Filtración de 5 etapas.
+                      Elimina impurezas y bacterias.
+                      Fácil instalación.
+                  </p>
+                  <p class="precio">$450</p>
+                  <button onclick="agregarAlCarrito(14, 'Sistema de Filtración', 450)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="desinfectantes">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Desinfectante para Superficies</h3>
+                  <img src="https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blta688e4fbca8b2fd6/659d273c794c27040ac2c716/lysol-website-productpage-crisplinen475g-712px-min-01.jpeg?width=550&height=550&format=jpg&quality=80" alt="Desinfectante para Superficies" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Desinfectante para uso doméstico</p>
+                  <p class="precio">$110</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Eficaz en eliminado gérmenes y bacterias.
+                      Contiene ingredientes naturales.
+                      Ideal para uso diario.
+                  </p>
+                  <p class="precio">$110</p>
+                  <button onclick="agregarAlCarrito(15, 'Desinfectante para Superficies', 110)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="limpiadores">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Limpiador para Muebles</h3>
+                  <img src="https://tienda.gruposayer.com/cdn/shop/products/AH00XX-NARANJA.png?v=1666995870" alt="Limpiador para Muebles" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Limpiador suave y efectivo para muebles</p>
+                  <p class="precio">$130</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Fórmula que nutre y protege la madera.
+                      Aroma agradable y no tóxico.
+                      Ideal para uso frecuente.
+                  </p>
+                  <p class="precio">$130</p>
+                  <button onclick="agregarAlCarrito(16, 'Limpiador para Muebles', 130)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <div class="producto" data-category="accesorios">
+          <div class="producto-inner">
+              <div class="producto-front">
+                  <h3>Guantes de Limpieza</h3>
+                  <img src="https://insumosmediseg.com/wp-content/uploads/2023/10/GUANTES-MASTER-TALLA-8.jpg" alt="Guantes de Limpieza" style="width:100px; height:100px; object-fit:cover;">
+                  <p>Guantes de limpieza resistentes y cómodos</p>
+                  <p class="precio">$90</p>
+              </div>
+              <div class="producto-back">
+                  <h3>Información Detallada</h3>
+                  <p class="descripcion-detallada">
+                      Hechos de látex duradero y flexible.
+                      Ideal para tareas domésticas y profesionales.
+                      Fáciles de limpiar y reutilizables.
+                  </p>
+                  <p class="precio">$90</p>
+                  <button onclick="agregarAlCarrito(17, 'Guantes de Limpieza', 90)">Agregar al carrito</button>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <div id="carritoModal" class="modal">
+      <div class="modal-content">
+          <h2>Carrito de Compras</h2>
+          <ul id="carrito-items"></ul>
+          <p>Total: $<span id="carrito-total">0</span></p>
+          <button onclick="cerrarCarrito()">Cerrar</button>
+          <button onclick="irACheckout()">Ir a Checkout</button>
+      </div>
+  </div>
+
+  <footer class="footer">
+      <p>© 2024 LimpiaMax - Todos los derechos reservados</p>
+      <p>Dirección: Av. Emilio Mendizabal #301, Sucre</p>
+      <p>Contacto: info@limpiamax.com | Tel: (+591) 70333911</p>
+  </footer>
+
+<script src="catalogo.js"></script>
+</body>
+</html>

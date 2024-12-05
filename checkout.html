@@ -1,0 +1,188 @@
+<html><head><base href="." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+  
+      .resumen-compra {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+  
+      .item-carrito {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      .total {
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: right;
+      }
+  
+      .formulario-checkout {
+        max-width: 600px;
+        margin: 20px auto;
+      }
+  
+      .form-group {
+        margin-bottom: 15px;
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+  
+      button {
+        background-color: #FF3535;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        background-color: #45a049;
+      }
+      /* Sección de información de contacto */
+.contact-info {
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.contact-info h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+    </style>
+  </head>
+  <body>
+    <div class="resumen-compra">
+      <h2>Resumen de tu compra</h2>
+      <div id="items-checkout"></div>
+      <div class="total">
+        Total: $<span id="total-checkout">0</span>
+      </div>
+    </div>
+  
+    <div class="formulario-checkout">
+      <h2>Información de envío</h2>
+      <form id="checkout-form" onsubmit="procesarCompra(event)">
+        <div class="form-group">
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" required>
+        </div>
+        <button type="submit">Confirmar Compra</button>
+      </form>
+    </div>
+    <section class="contact-info">
+      <h2>¿Necesitas ayuda?</h2>
+      <p>Nuestro equipo está disponible para atenderte</p>
+      <p>📧 info@limpiamax.com</p>
+      <p>📞 (+591) 70333911</p>
+    </section>
+    
+    <footer class="footer">
+      <p>© 2024 LimpiaMax - Todos los derechos reservados</p>
+      <p>Dirección: Av. Emilio Mendizabal #301, Sucre</p>
+      <p>Contacto: info@limpiamax.com | Tel: (+591) 70333911</p>
+    </footer>
+    <script>
+      // Cargar items del carrito desde localStorage
+      function cargarCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const itemsContainer = document.getElementById('items-checkout');
+        const totalElement = document.getElementById('total-checkout');
+        let total = 0;
+  
+        itemsContainer.innerHTML = '';
+        
+        carrito.forEach(item => {
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'item-carrito';
+          itemDiv.innerHTML = `
+            <span>${item.nombre}</span>
+            <span>$${item.precio}</span>
+          `;
+          itemsContainer.appendChild(itemDiv);
+          total += item.precio;
+        });
+  
+        totalElement.textContent = total;
+      }
+  
+      function procesarCompra(event) {
+        event.preventDefault();
+        
+        // Aquí iría la lógica para procesar la compra
+        alert('¡Compra procesada con éxito!');
+        
+        // Limpiar el carrito
+        localStorage.removeItem('carrito');
+        
+        // Redirigir a la página principal
+        window.location.href = 'principal.html';
+      }
+  
+      // Cargar el carrito al iniciar la página
+      window.onload = cargarCarrito;
+    </script>
+  </body></html>

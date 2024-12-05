@@ -1,0 +1,68 @@
+<html><head><base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimpiaMax - Foro de Consejos</title>
+    <link rel="stylesheet" href="foro.css">
+  </head>
+  <body>
+  
+  <header class="header">
+    <nav class="nav">
+      <a href="principal.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+          <path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        LimpiaMax
+      </a>
+      <div class="menu">
+        <a href="catalogo.html">Productos</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="foro.html">Foro</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="forum-container">
+    <div class="forum-header">
+      <h1>Foro de Consejos y Experiencias</h1>
+      <p>Comparte tus tips de limpieza, reseñas de productos y experiencias con la comunidad</p>
+    </div>
+  
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="tips">Tips de Limpieza</button>
+      <button class="filter-btn" data-filter="reviews">Reseñas</button>
+      <button class="filter-btn" data-filter="experiences">Experiencias</button>
+    </div>
+  
+    <div class="new-post-form">
+      <h2>Crear Nueva Publicación</h2>
+      <form id="post-form">
+        <div class="form-group">
+          <label for="post-title">Título</label>
+          <input type="text" id="post-title" required>
+        </div>
+        <div class="form-group">
+          <label for="post-category">Categoría</label>
+          <select id="post-category" required>
+            <option value="tips">Tip de Limpieza</option>
+            <option value="reviews">Reseña de Producto</option>
+            <option value="experiences">Experiencia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="post-content">Contenido</label>
+          <textarea id="post-content" required></textarea>
+        </div>
+        <button type="submit" class="btn">Publicar</button>
+      </form>
+    </div>
+  
+    <div id="posts-container">
+      <!-- Posts will be dynamically added here -->
+    </div>
+  </div>
+  
+  <script src="foro.js"></script>
+  </body></html>

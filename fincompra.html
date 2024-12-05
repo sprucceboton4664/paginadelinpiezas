@@ -1,0 +1,65 @@
+<html><head><base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimpiaMax - Finalizar Compra</title>
+    <link href="fincompra.css" rel="stylesheet">
+    </head>
+    <body>
+    
+    <header class="header">
+    <nav class="nav">
+        <a href="principal.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        LimpiaMax
+        </a>
+    </nav>
+    </header>
+    
+    <div class="checkout-container">
+    <h2>Finalizar Compra</h2>
+
+    <div id="cart-summary">
+        <h3>Resumen del Pedido</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+        Total: <span id="cart-total">0.00</span> Bs
+        </div>
+    </div>
+    
+    <form id="checkout-form" class="mt-4">
+        <h3>Información de Contacto</h3>
+        <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" required>
+        </div>
+        
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        </div>
+        
+        <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" required>
+        </div>
+        
+        <div class="form-group">
+        <label for="direccion">Dirección de envío</label>
+        <input type="text" id="direccion" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+    </form>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 LimpiaMax - Todos los derechos reservados</p>
+        <p>Dirección: Av. Emilio Mendizabal #301, Sucre</p>
+        <p>Contacto: info@limpiamax.com | Tel: (+591) 70333911</p>
+    </footer>
+
+    <script src="fincompra.js"></script>
+    </body>
+    </html>

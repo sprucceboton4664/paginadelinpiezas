@@ -1,0 +1,1111 @@
+<html><head><base href="." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas Especiales - LimpiaMax</title>
+  <style>
+:root {
+  --primary: #00a8e8;
+  --secondary: #003459;
+  --accent: #ff6b6b;
+  --light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--light);
+}
+
+.header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--secondary);
+}
+
+.hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  background: var(--secondary);
+}
+
+.carousel {
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-content {
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+}
+
+.carousel-slide h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.carousel-slide p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.carousel-slide .btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #003459;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+}
+
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.arrow {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.products {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-info {
+  padding: 1rem 0;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #ff4f4f;
+}
+
+.footer {
+  background-color: var(--secondary);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.categories {
+  padding: 2rem;
+  background-color: white;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.category-item {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.category-item:hover {
+  background-color: var(--light);
+}
+
+.price {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.contact-info {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.carousel-arrows .arrow {
+  z-index: 4; 
+}
+.ofertas-del-dia {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.ofertas-del-dia h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.oferta {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.oferta img {
+  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.precio-oferta {
+  font-size: 1.5em;
+  color: #e63946;
+  font-weight: bold;
+}
+
+button {
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #21867a;
+}
+.ofertas-del-dia .precio-original {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.ofertas-del-dia .precio-oferta {
+  font-size: 1.5em;
+}
+
+.card img {
+  max-height: 200px;
+  object-fit: cover;
+}
+.text-warning {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.store-description {
+  background-color: #f9f9f9;
+  padding: 3rem 1.5rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.store-description-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.store-description h2 {
+  font-size: 2.5rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+
+.store-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item svg {
+  width: 50px;
+  height: 50px;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+  </style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 768px;
+  min-height: 480px;
+  margin: auto;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.container button {
+  background-color: #00A8E8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%,
+  49.99% {
+      opacity: 0;
+      z-index: 1;
+  }
+  50%,
+  100% {
+      opacity: 1;
+      z-index: 5;
+  }
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  background-color: #00A8E8;
+  height: 100%;
+  background: linear-gradient(to right, #00A8E8, #00A8E8);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+</style>
+<head>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LimpiaMax - Artículos de Limpieza Profesional</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+crossorigin="anonymous"
+/>
+<link rel="stylesheet" href="principal.css">
+<link rel="stylesheet" href="modal.css">
+</head>
+<body>
+
+<header class="header">
+<nav class="nav">
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+    </svg>
+    LimpiaMax
+  </div>
+  <div class="menu">
+    <a href="catalogo.html">Productos</a>
+    <a href="ofertas.html">Ofertas</a>
+    <a href="foro.html">Foro</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="carousel">
+  <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+    <div class="carousel-content">
+      <h1>Todo para la limpieza profesional</h1>
+      <p>Los mejores productos de limpieza para tu hogar y negocio</p>
+      <a href="catalogo.html" class="btn">Ver catálogo</a>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4BG_lTswS7CkYEIQE79GeGmNa7eTiJ0fB1FkOd7w7De9QkXDUu5VOQ5fJtyxreL-nHro&usqp=CAU')">
+    <div class="carousel-content">
+      <h1>Ofertas especiales</h1>
+      <p>Descubre nuestras promociones del mes</p>
+      <a href="ofertas.html" class="btn">Ver ofertas</a>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://brainspro.com/wp-content/uploads/2021/05/3333333333333333333333.jpg')">
+    <div class="carousel-content">
+      <h1>Foro de limpieza</h1>
+      <p>Comparte tips de limpieza, reseñas de productos y experiencias con nuestra comunidad</p>
+      <a href="foro.html" class="btn">Foro</a>
+    </div>
+  </div>
+  
+  <div class="carousel-dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  
+  <div class="carousel-arrows">
+    <div class="arrow prev">❮</div>
+    <div class="arrow next">❯</div>
+  </div>
+</div>
+</section>
+
+<section class="store-description">
+<div class="store-description-content">
+  <h2>Bienvenidos a LimpiaMax</h2>
+  <p>En LimpiaMax, nos enorgullecemos de ser líderes en el mercado de artículos de limpieza profesional desde hace más de 20 años. Nuestra misión es proporcionar soluciones integrales de limpieza que satisfagan las necesidades tanto de hogares como de empresas, garantizando siempre la más alta calidad y eficiencia en cada uno de nuestros productos.</p>
+  
+  <p>Contamos con un extenso catálogo que incluye desde productos básicos de limpieza hasta equipamiento profesional especializado. Todos nuestros productos son cuidadosamente seleccionados, priorizando aquellos que combinan efectividad con responsabilidad medioambiental, porque creemos que la limpieza no debe comprometer el futuro de nuestro planeta.</p>
+
+  <div class="features-grid">
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <h3>Calidad Garantizada</h3>
+      <p>Productos certificados y garantía de satisfacción en todas nuestras líneas.</p>
+    </div>
+    
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      <h3>Entrega a Domicilio</h3>
+      <p>Servicio de entrega rápido y seguro en toda la ciudad.</p>
+    </div>
+    
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <h3>Productos Seguros</h3>
+      <p>Comprometidos con tu seguridad y la del medio ambiente.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="contact-info">
+<h2>¿Necesitas ayuda?</h2>
+<p>Nuestro equipo está disponible para atenderte</p>
+<p>📧 info@limpiamax.com</p>
+<p>📞 (+591) 70333911</p>
+</section>
+
+<footer class="footer">
+<p>© 2024 LimpiaMax - Todos los derechos reservados</p>
+<p>Dirección: Av. Emilio Mendizabal #301, Sucre</p>
+<p>Contacto: info@limpiamax.com | Tel: (+591) 70333911</p>
+</footer>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    </div>
+    <div class="modal-body">
+      <!-- Formulario de inicio de sesión -->
+      <div class="container" id="container">
+        <div class="form-container sign-up">
+          <form>
+            <h1>Crea una cuenta</h1>
+            <div class="social-icons">
+              <a href="https://accounts.google.com" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="https://facebook.com" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://github.com" class="icon"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span>o usa tu correo electrónico para registrarte</span>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Regístrate</button>
+          </form>
+        </div>
+        <div class="form-container sign-in">
+          <form>
+            <h1>Inicia sesión</h1>
+            <div class="social-icons">
+              <a href="https://accounts.google.com" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="https://facebook.com" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://github.com" class="icon"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span>o usa tu correo electrónico y contraseña</span>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <button type="submit">Iniciar sesión</button>
+          </form>
+        </div>
+        <div class="toggle-container">
+          <div class="toggle">
+            <div class="toggle-panel toggle-left">
+              <h1>¡Bienvenido de nuevo!</h1>
+              <p>Introduce tus datos personales para usar todas las funciones del sitio</p>
+              <button class="hidden" id="login">Inicia sesión</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+              <h1>¡Hola, amigo!</h1>
+              <p>Regístrate con tus datos personales para usar todas las funciones del sitio</p>
+              <button class="hidden" id="register">Regístrate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+/*  CSS  */
+</style>
+<script>
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
+
+registerBtn.addEventListener('click', () => {
+  container.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+  container.classList.remove("active");
+});
+
+</script>
+
+<!-- Bootstrap JavaScript Libraries -->
+<script
+src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+crossorigin="anonymous"
+></script>
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+crossorigin="anonymous"
+></script>
+
+<script src="principal.js"></script>
+<script src="modal.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuLinks = document.querySelectorAll(".menu a");
+  const currentPath = window.location.pathname;
+
+  // Marcar el enlace activo
+  menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPath) {
+          link.classList.add("active");
+      }
+  });
+
+  const cart = [];
+  const addToCartButtons = document.querySelectorAll(".btn");
+
+  addToCartButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+          // Si el botón pertenece a un producto, manejar el carrito
+          const productCard = button.closest(".product-card");
+          if (productCard) {
+              e.preventDefault(); // Prevenir comportamiento por defecto solo si es un producto
+
+              const productName = productCard.querySelector("h3").innerText;
+              const productPrice = productCard.querySelector(".price").innerText;
+
+              cart.push({ name: productName, price: productPrice });
+
+              updateCartIndicator();
+              alert(`${productName} añadido al carrito.`);
+          }
+      });
+  });
+
+  const updateCartIndicator = () => {
+      const cartIndicator = document.querySelector(".menu a[href='carrito.html']");
+      if (!cartIndicator) return;
+
+      cartIndicator.textContent = `🛒 Carrito (${cart.length})`;
+  };
+
+  const myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
+      backdrop: 'static',
+      keyboard: false
+  });
+  myModal.show();
+
+  // Carrusel
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let currentSlide = 0;
+
+  function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      currentSlide = (n + slides.length) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+      showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+      showSlide(currentSlide - 1);
+  }
+
+  // Event listeners for carousel
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+
+  dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+  });
+
+  // Auto advance slides
+  let slideInterval = setInterval(nextSlide, 5000);
+
+  // Pause auto-advance on hover
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+      carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      carousel.addEventListener('mouseleave', () => {
+          slideInterval = setInterval(nextSlide, 5000);
+      });
+  }
+});
+let carritoOfertas = [];
+
+function agregarOfertaAlCarrito(id, nombre, precio) {
+const oferta = { id, nombre, precio };
+carritoOfertas.push(oferta);
+alert(`${nombre} ha sido añadido al carrito por $${precio}.`);
+}
+function iniciarContador(idContador, idBoton, duracionHoras) {
+  const finOferta = new Date().getTime() + duracionHoras * 60 * 60 * 1000;
+
+  function actualizarContador() {
+    const ahora = new Date().getTime();
+    const diferencia = finOferta - ahora;
+
+    if (diferencia <= 0) {
+      document.getElementById(idContador).innerText = "Oferta Expirada";
+      document.getElementById(idBoton).disabled = true;
+      return;
+    }
+
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById(idContador).innerText = `Tiempo restante: ${horas}h ${minutos}m ${segundos}s`;
+  }
+
+  actualizarContador();
+  setInterval(actualizarContador, 1000);
+}
+
+// Inicializar el contador para la primera oferta (24 horas)
+iniciarContador("contador-oferta-1", "boton-oferta-1", 24);
+
+// Seleccionar el botón y el mensaje
+const loginButton = document.getElementById('loginButton');
+const message = document.getElementById('message');
+
+// Agregar evento de clic al botón
+loginButton.addEventListener('click', () => {
+    // Mostrar el mensaje
+    message.style.display = 'block';
+});
+
+// Store for registered users
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+// Get form elements
+const signUpForm = document.querySelector('.sign-up form');
+const signInForm = document.querySelector('.sign-in form');
+
+// Handle Sign Up
+signUpForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const name = signUpForm.querySelector('input[type="text"]').value;
+  const email = signUpForm.querySelector('input[type="email"]').value;
+  const password = signUpForm.querySelector('input[type="password"]').value;
+
+  // Check if user already exists
+  if (users.find(user => user.email === email)) {
+      alert('Este correo electrónico ya está registrado');
+      return;
+  }
+
+  // Add new user
+  users.push({
+      name,
+      email,
+      password
+  });
+
+  // Save to localStorage
+  localStorage.setItem('users', JSON.stringify(users));
+
+  alert('¡Registro exitoso! Ahora puedes iniciar sesión');
+  container.classList.remove("active"); // Switch to login view
+  signUpForm.reset();
+});
+
+// Handle Sign In
+signInForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const email = signInForm.querySelector('input[type="email"]').value;
+  const password = signInForm.querySelector('input[type="password"]').value;
+
+  // Find user
+  const user = users.find(user => user.email === email && user.password === password);
+
+  if (user) {
+      // Store logged in user
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      alert('¡Bienvenido ' + user.name + '!');
+      
+      // Close modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+      modal.hide();
+      
+      // Update UI to show logged in state
+      updateLoggedInUI(user);
+  } else {
+      alert('Correo electrónico o contraseña incorrectos');
+  }
+  
+  signInForm.reset();
+});
+
+// Function to update UI when logged in
+function updateLoggedInUI(user) {
+  const menu = document.querySelector('.menu');
+  
+  // Remove login button if exists
+  const loginLink = menu.querySelector('a[href="#"]');
+  if (loginLink) {
+      loginLink.remove();
+  }
+
+  // Add user menu
+  const userMenu = document.createElement('div');
+  userMenu.style.display = 'flex';
+  userMenu.style.alignItems = 'center';
+  userMenu.style.gap = '1rem';
+  userMenu.innerHTML = `
+      <span style="color: white;">Hola, ${user.name}</span>
+      <button onclick="logout()" class="btn btn-sm btn-light">Cerrar sesión</button>
+  `;
+  menu.appendChild(userMenu);
+}
+
+// Logout function
+function logout() {
+  localStorage.removeItem('currentUser');
+  location.reload();
+}
+
+// Check if user is already logged in on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  if (currentUser) {
+      updateLoggedInUI(currentUser);
+      // Close modal if it's open
+      const modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+      if (modal) {
+          modal.hide();
+      }
+  }
+});
+</script>
+
+</body>
+</html>
